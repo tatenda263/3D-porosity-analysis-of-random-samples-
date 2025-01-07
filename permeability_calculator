@@ -1,0 +1,98 @@
+import numpy as np
+import openpnm as op  # Correct import statement
+import porespy as ps
+import os
+
+def calculate_permeability(raw_file, sample_size):
+    #calculates the effective permeability of a sample from a raw file
+
+    with open(raw_file, 'rb') as f:
+        im = np.fromfile(f, dtype=np.uint8).reshape(sample_size)
+    im = im == 0  # pores are now represented as True
+
+    #generate SNOW network
+    snow_results = ps.networks.snow2(im, voxel_size=0.0000076)
+    snow_network = snow_results.network  # Get the network object from the results
+
+    #create an OpenPNM network from the SNOW network
+    pn = op.network.Network()
+    pn.update({
+        'pore.coords': snow_network['pore.coords'],    # Accessing from dictionary
+        'throat.conns': snow_network['throat.conns']   # Accessing from dictionary
+    })
+
+    print(f"Number of pores in the network: {pn.Np}")  # Print the number of pores in the network
+
+    #geometry and Phase (Add pore diameter model)
+    air = op.phase.Air(network=pn)
+    air['pore.viscosity'] = 1.8e-5  # Directly assign viscosity
+
+    #Stokes Flow (Adjusted boundary conditions)
+    sf = op.algorithms.StokesFlow(network=pn, phase=air)
+
+    #find isolated clusters
+    pn.add_model(propname='pore.cluster_number',
+                 model=op.models.network.cluster_number)
+    pn.add_model(propname='pore.cluster_size',
+                 model=op.models.network.cluster_size)
+
+    #add hydraulic conductance model
+    pn.add_model(propname='pore.diameter',
+              model=op.models.geometry.pore_size.largest_sphere,
+              iters=10)
+    pn.add_model(propname='throat.diameter',
+              model=op.models.geometry.throat_size.from_neighbor_pores)
+    pn.add_model(propname='throat.hydraulic_size_factors',
+              model=op.models.geometry.hydraulic_size_factors.spheres_and_cylinders)
+    air.add_model(propname='throat.hydraulic_conductance',
+              model=op.models.physics.hydraulic_conductance.hagen_poiseuille)
+
+    print(pn)
+    print(pn['pore.cluster_number'])
+    print(pn['pore.cluster_size'])
+
+    #open a text file in write mode
+    with open('cluster_info.txt', 'w') as f:
+        #convert the numpy arrays to string and write to the file
+        f.write("Cluster numbers:\n")
+        f.write(np.array2string(pn['pore.cluster_number'], threshold=np.inf))
+        f.write("\nCluster sizes:\n")
+        f.write(np.array2string(pn['pore.cluster_size'], threshold=np.inf))
+
+    Ps = pn['pore.cluster_size'] < 2534
+    op.topotools.trim(network=pn, pores=Ps)
+
+    #label the pores on the left side
+    left_pores = pn.coords[:, 0] == pn.coords[:, 0].min()
+    pn["pore.left"] = left_pores
+
+    #label the pores on the right side
+    right_pores = pn.coords[:, 0] == pn.coords[:, 0].max()
+    pn["pore.right"] = right_pores
+
+    sf.set_value_BC(pores=pn.pores("left"), values=1)
+    sf.set_value_BC(pores=pn.pores("right"), values=0)
+    sf.run()
+
+    #permeability calculation (corrected for pressure difference)
+    outlets = pn.pores("right")
+    Q = sf.rate(pores=outlets)
+    A = 4.04 * 1e-6             #cross-sectional area in m^2
+    L = 1.6 * 1e-3              #length in m
+    mu = air['pore.viscosity'].mean()
+    K = Q * mu * L / A
+
+    return K
+
+#define input parameters
+sample_size = (350, 200, 200)
+output_prefix = "sample"
+high_value_samples = [10]
+
+#open the text file to write the results
+with open("permeability_results.txt", "w") as f:
+    for i in high_value_samples:
+        raw_file = f"{output_prefix}_{i}.raw"
+        if os.path.exists(raw_file):
+            K = calculate_permeability(raw_file, sample_size)
+            f.write(f"Sample {i} Permeability: {K}\n")
