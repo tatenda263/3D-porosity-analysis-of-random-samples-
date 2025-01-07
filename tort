@@ -1,0 +1,40 @@
+import numpy as np
+import porespy as ps
+import os
+
+def calculate_tortuosity(raw_file, sample_size):
+   
+    #calculates the tortuosity of a sample from a raw file.
+    #raw_file: Path to the raw file.
+    #sample_size: Size of the 3D sample.
+
+    with open(raw_file, 'rb') as f:
+        data = np.fromfile(f, dtype=np.uint8)
+        data = data.reshape(sample_size)
+
+    #create a boolean mask of the pores (phase of interest)
+    pores = data == 0
+
+    #run the tortuosity_fd function on the image
+    #for the X-axis we assign axis a value of 1.
+    results = ps.simulations.tortuosity_fd(im=pores, axis=1)  # Changed axis to 1 for X-axis as per tutorial
+
+    return results
+
+#define input parameters
+sample_size = (350, 200, 200)  # Adjust as needed
+output_prefix = "sample"
+
+#list of sample numbers that should be processed
+high_value_samples = [1, 4, 6, 10, 11, 16, 17, 20, 21, 22, 23]
+
+#open the text file to write the results
+with open("tortuosity_results.txt", "w", encoding='utf-8') as f:  # Specify the encoding as 'utf-8'
+    #calculate the tortuosity for each sample in high_value_samples
+    for i in high_value_samples:
+        raw_file = f"{output_prefix}_{i}.raw"
+        if os.path.exists(raw_file):
+            results = calculate_tortuosity(raw_file, sample_size)
+
+            #write the results to the text file
+            f.write(f"Sample {i} Tortuosity: {str(results)}\n")  #convert results to string before writing
