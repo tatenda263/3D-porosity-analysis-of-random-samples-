@@ -1,0 +1,138 @@
+Sample 1 Tortuosity: ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――
+Results of tortuosity_fd generated at Sat May 18 00:19:22 2024
+――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――
+im                        Array of size (350, 200, 200)
+tortuosity                29.195386926411608
+formation_factor          177.9809628557406
+original_porosity         0.2171315
+effective_porosity        0.16403657142857142
+concentration             Array of size (350, 200, 200)
+sys                       (<2296512x2296512 sparse matrix of type '<class 'numpy.float64'>'
+	with 14524668 stored elements in COOrdinate format>, array([5.35270009, 5.35270009, 5.35270009, ..., 0.        , 0.        ,
+       0.        ]))
+――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――
+Sample 4 Tortuosity: ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――
+Results of tortuosity_fd generated at Sat May 18 00:22:26 2024
+――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――
+im                        Array of size (350, 200, 200)
+tortuosity                21.78230308044487
+formation_factor          115.19146615852154
+original_porosity         0.29015564285714285
+effective_porosity        0.1890965
+concentration             Array of size (350, 200, 200)
+sys                       (<2647351x2647351 sparse matrix of type '<class 'numpy.float64'>'
+	with 16900903 stored elements in COOrdinate format>, array([5.41986235, 5.41986235, 5.41986235, ..., 0.        , 0.        ,
+       0.        ]))
+――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――
+Sample 6 Tortuosity: ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――
+Results of tortuosity_fd generated at Sat May 18 00:30:28 2024
+――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――
+im                        Array of size (350, 200, 200)
+tortuosity                29.985049640271885
+formation_factor          158.6059800705946
+original_porosity         0.24730657142857143
+effective_porosity        0.1890537142857143
+concentration             Array of size (350, 200, 200)
+sys                       (<2646752x2646752 sparse matrix of type '<class 'numpy.float64'>'
+	with 16729994 stored elements in COOrdinate format>, array([0., 0., 0., ..., 0., 0., 0.]))
+――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――
+Sample 10 Tortuosity: ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――
+Results of tortuosity_fd generated at Sat May 18 00:33:39 2024
+――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――
+im                        Array of size (350, 200, 200)
+tortuosity                49.01391432110582
+formation_factor          292.55488664392044
+original_porosity         0.22000957142857142
+effective_porosity        0.1675375
+concentration             Array of size (350, 200, 200)
+sys                       (<2345525x2345525 sparse matrix of type '<class 'numpy.float64'>'
+	with 14347189 stored elements in COOrdinate format>, array([5.17153729, 5.17153729, 5.17153729, ..., 0.        , 0.        ,
+       0.        ]))
+――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――
+Sample 11 Tortuosity: ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――
+Results of tortuosity_fd generated at Sat May 18 00:35:11 2024
+――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――
+im                        Array of size (350, 200, 200)
+tortuosity                28.141857119927447
+formation_factor          165.551952460103
+original_porosity         0.240929
+effective_porosity        0.16998807142857142
+concentration             Array of size (350, 200, 200)
+sys                       (<2379833x2379833 sparse matrix of type '<class 'numpy.float64'>'
+	with 14994811 stored elements in COOrdinate format>, array([0., 0., 0., ..., 0., 0., 0.]))
+――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――
+Sample 16 Tortuosity: ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――
+Results of tortuosity_fd generated at Sat May 18 00:38:41 2024
+――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――
+im                        Array of size (350, 200, 200)
+tortuosity                12.478455539883647
+formation_factor          64.62528916418457
+original_porosity         0.2935992142857143
+effective_porosity        0.19308935714285713
+concentration             Array of size (350, 200, 200)
+sys                       (<2703251x2703251 sparse matrix of type '<class 'numpy.float64'>'
+	with 17279843 stored elements in COOrdinate format>, array([0., 0., 0., ..., 0., 0., 0.]))
+――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――
+Sample 17 Tortuosity: ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――
+Results of tortuosity_fd generated at Sat May 18 00:44:21 2024
+――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――
+im                        Array of size (350, 200, 200)
+tortuosity                26.82636951750391
+formation_factor          132.89995988790147
+original_porosity         0.2741112857142857
+effective_porosity        0.20185385714285714
+concentration             Array of size (350, 200, 200)
+sys                       (<2825954x2825954 sparse matrix of type '<class 'numpy.float64'>'
+	with 17890448 stored elements in COOrdinate format>, array([0., 0., 0., ..., 0., 0., 0.]))
+――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――
+Sample 20 Tortuosity: ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――
+Results of tortuosity_fd generated at Sat May 18 00:47:06 2024
+――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――
+im                        Array of size (350, 200, 200)
+tortuosity                11.182796543353247
+formation_factor          56.944246496504235
+original_porosity         0.25265385714285715
+effective_porosity        0.1963815
+concentration             Array of size (350, 200, 200)
+sys                       (<2749341x2749341 sparse matrix of type '<class 'numpy.float64'>'
+	with 17263437 stored elements in COOrdinate format>, array([0., 0., 0., ..., 0., 0., 0.]))
+――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――
+Sample 21 Tortuosity: ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――
+Results of tortuosity_fd generated at Sat May 18 00:50:42 2024
+――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――
+im                        Array of size (350, 200, 200)
+tortuosity                27.198937469928104
+formation_factor          191.30441478255779
+original_porosity         0.21228785714285714
+effective_porosity        0.14217621428571428
+concentration             Array of size (350, 200, 200)
+sys                       (<1990467x1990467 sparse matrix of type '<class 'numpy.float64'>'
+	with 12424943 stored elements in COOrdinate format>, array([5.2868146, 5.2868146, 5.2868146, ..., 0.       , 0.       ,
+       0.       ]))
+――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――
+Sample 22 Tortuosity: ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――
+Results of tortuosity_fd generated at Sat May 18 00:53:08 2024
+――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――
+im                        Array of size (350, 200, 200)
+tortuosity                13.03228198429294
+formation_factor          74.29675291843292
+original_porosity         0.22695592857142857
+effective_porosity        0.1754085
+concentration             Array of size (350, 200, 200)
+sys                       (<2455719x2455719 sparse matrix of type '<class 'numpy.float64'>'
+	with 15360739 stored elements in COOrdinate format>, array([5.29442742, 5.29442742, 5.29442742, ..., 0.        , 0.        ,
+       0.        ]))
+――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――
+Sample 23 Tortuosity: ――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――
+Results of tortuosity_fd generated at Sat May 18 00:54:59 2024
+――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――
+im                        Array of size (350, 200, 200)
+tortuosity                23.615527819887227
+formation_factor          218.5920329037235
+original_porosity         0.21355957142857143
+effective_porosity        0.10803471428571429
+concentration             Array of size (350, 200, 200)
+sys                       (<1512486x1512486 sparse matrix of type '<class 'numpy.float64'>'
+	with 9399780 stored elements in COOrdinate format>, array([5.26293929, 5.26293929, 0.        , ..., 0.        , 0.        ,
+       0.        ]))
+――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――
